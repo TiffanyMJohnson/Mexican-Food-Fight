@@ -60,9 +60,11 @@ body {
     width: 400px;
 }
 #originaltaco {
-    max-width: 300px;
-    margin-top: 255px;
+    width: 400px;
+    height: 325px;
+    margin-top: 180px;
     margin-left: 700px;
+  
     align-content: flex-end;
     
 }
@@ -73,11 +75,10 @@ body {
 }
 .tacobuttons {
     max-width: 400px;
-    margin-left: 700px;
-    margin-bottom: 0px;
+    margin-left: 700px; 
+    margin-bottom: 0px; 
     
-}
-
+} 
 #attacktaco {
     background-color: red;
     color: white;
@@ -95,7 +96,7 @@ body {
     color: white;
     font-weight: bold;
     font-size: 30px;
-}
+} 
 #attackburrito {
     background-color: red;
     color: white;

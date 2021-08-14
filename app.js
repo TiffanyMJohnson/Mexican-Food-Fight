@@ -44,9 +44,10 @@ const player2 = {
         attackButton.addEventListener ("click", (event) => {
             this.taco.currentChoice = "attack"
             const attackTacoImg = document.getElementById ("originaltaco")
-            attackTacoImg.src = "https://i.imgur.com/Zz4taLm.png"
-            attackTacoImg.style.width = "500px"
-            attackTacoImg.style.marginTop = "210px"
+            attackTacoImg.src = "https://i.imgur.com/sutkZFj.png"
+            // attackTacoImg.style.width = "310px"
+            // attackTacoImg.style.marginTop = "210px"
+            // attackTacoImg.style.marginLeft = "600px"
             
         })
     },
@@ -56,9 +57,10 @@ const player2 = {
         defendButton.addEventListener ("click", (event) => {
             this.taco.currentChoice = "defend"
             const defendTacoImg = document.getElementById ("originaltaco")
-            defendTacoImg.src = "https://i.imgur.com/QCyIGwO.png"
-            defendTacoImg.style.marginTop = "245px"
-            defendTacoImg.style.width = ""
+            defendTacoImg.src = "https://i.imgur.com/JSK9C0v.png"
+            // defendTacoImg.style.marginTop = "175px"
+            // defendTacoImg.style.maxWidth = "400px"
+            // defendTacoImg.style.marginLeft = "600px"
         })
     },
     heal () {
@@ -66,9 +68,9 @@ const player2 = {
         healButton.addEventListener ("click", (event) => {
             this.taco.currentChoice = "heal"
             const healTacoImg = document.getElementById ("originaltaco")
-            healTacoImg.src = "https://i.imgur.com/nc3nrct.png"
-            healTacoImg.style.marginTop = "225px"
-            healTacoImg.style.width = ""
+            healTacoImg.src = "https://i.imgur.com/epqAvX7.png"
+        //     healTacoImg.style.marginTop = "190px"
+        //     healTacoImg.style.maxWidth = "350px"
         })
     },
 }
