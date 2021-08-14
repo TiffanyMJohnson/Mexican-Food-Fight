@@ -44,15 +44,21 @@ const player2 = {
         attackButton.addEventListener ("click", (event) => {
             this.taco.currentChoice = "attack"
             const attackTacoImg = document.getElementById ("originaltaco")
-            attackTacoImg.src = "https://i.imgur.com/oVwxgdv.png"
+            attackTacoImg.src = "https://i.imgur.com/Zz4taLm.png"
+            attackTacoImg.style.width = "500px"
+            attackTacoImg.style.marginTop = "210px"
+            
         })
     },
+
     defend () {
         const defendButton = document.querySelector("#defendtaco")
         defendButton.addEventListener ("click", (event) => {
             this.taco.currentChoice = "defend"
             const defendTacoImg = document.getElementById ("originaltaco")
-            defendTacoImg.src = "https://i.imgur.com/zkBclQB.png"
+            defendTacoImg.src = "https://i.imgur.com/QCyIGwO.png"
+            defendTacoImg.style.marginTop = "245px"
+            defendTacoImg.style.width = ""
         })
     },
     heal () {
@@ -60,7 +66,9 @@ const player2 = {
         healButton.addEventListener ("click", (event) => {
             this.taco.currentChoice = "heal"
             const healTacoImg = document.getElementById ("originaltaco")
-            healTacoImg.src = "https://i.imgur.com/wGeMsaL.png"
+            healTacoImg.src = "https://i.imgur.com/nc3nrct.png"
+            healTacoImg.style.marginTop = "225px"
+            healTacoImg.style.width = ""
         })
     },
 }
@@ -134,8 +142,19 @@ const game = () => {
                 const defeatedBurrito = document.getElementById("originalburrito")
                 defeatedBurrito.src = ""
                 const victoryTaco = document.getElementById ("originaltaco")
-                victoryTaco.src = "https://i.imgur.com/odkdYE9.png"
+                victoryTaco.src = "https://i.imgur.com/6VuLdv9.png"
                 result.innerHTML = "Taco has defeated Burrito to become the Supreme Mexican Food"
+                document.getElementById("battle").disabled = true
+                document.getElementById("start").disabled = true
+                const refresh = document.createElement ("button")
+                refresh.innerText = "Refresh Game"
+                const appendToTop = document.querySelector(".gameplay")
+                appendToTop.appendChild(refresh)
+                refresh.style.fontSize = "20px"
+                refresh.style.marginBottom = "0px"
+                refresh.addEventListener("click", (event)=> {
+                     location.reload()
+                 })
             }
             else if (player2.taco.health === 0) {
                 const defeatedTaco = document.getElementById("originaltaco")
@@ -143,7 +162,19 @@ const game = () => {
                 const victoryBurrito = document.getElementById("originalburrito")
                 victoryBurrito.src = "https://i.imgur.com/ROYglNr.png"
                 result.innerHTML = "Burrito has defeated Taco to become the Supreme Mexican Food"
+                const refresh = document.createElement ("button")
+                refresh.innerText = "Refresh Game"
+                const appendToTop = document.querySelector(".gameplay")
+                appendToTop.appendChild(refresh)
+                refresh.style.fontSize = "20px"
+                refresh.style.marginBottom = "0px"
+                document.getElementById("battle").disabled = true
+                document.getElementById("start").disabled = true
+                refresh.addEventListener("click", (event)=> {
+                    location.reload()
+                })
             }
+            
         }
         endGame()
 }
