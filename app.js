@@ -95,11 +95,36 @@ const game = () => {
           player2.taco.health -= 10
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
           document.querySelector("#tacohealth").innerHTML = "Taco Health: " + `${player2.taco.health}`
+          const attackAnimation = () => {
+          document.querySelector("#originalburrito").style.marginLeft = "70%"
+          document.querySelector("#originaltaco").style.marginRight = "70%"
+          }
+          const runAttack = setInterval(attackAnimation, 500)
+          const stopAttack = clearInterval(attackAnimation)
+          const returnAnimation = () => {
+            document.querySelector("#originalburrito").style.marginLeft = "0%"
+            document.querySelector("#originaltaco").style.marginRight = "0%"
+          }
+          const runReturn = setInterval (returnAnimation,500)
+          const stopReturn = clearInterval(returnAnimation)
+    
         }
         else if (player2.taco.currentChoice === "defend") {
           result.innerHTML = "Taco is defending. Burrito bounces off of Taco's force field. Make your next move."
           player1.burrito.health -= 5
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
+          const attackBurrito = () => {
+            document.querySelector("#originalburrito").style.marginLeft = "125%"
+            }
+            const runAttackBurrito = setInterval(attackBurrito, 500)
+            const stopAttackBurrito = clearInterval(attackBurrito)
+            const returnBurrito = () => {
+              document.querySelector("#originalburrito").style.marginLeft = "0%"
+              
+            }
+            const runReturnBurrtio = setInterval (returnBurrito,500)
+            const stopReturnBurrito = clearInterval(returnBurrito)
+        
         }
         else  if (player2.taco.currentChoice === "heal") {
           result.innerHTML = "Taco has chosen to heal, but Burrito still lands an attack. Make your next move."
@@ -185,10 +210,12 @@ const start = () => {
     const startButton = document.querySelector("#start")
     startButton.addEventListener("click", (event) => {
         result.innerHTML = "Once each player has made their move, click the Battle Commence button."
+        document.getElementById("start").disabled = true
     })
 }
 start ()
 const battle = () => {
+    document.getElementById("battle").disabled = false
     const battleButton = document.querySelector("#battle")
     battleButton.addEventListener("click", (event) => {
         game ()

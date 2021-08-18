@@ -30,20 +30,25 @@ body {
 }
 
  .players {
+     max-width: 100vw;
     display: flex;
     flex-direction: row;
-   
     font-weight: bold;
     padding-top: 50px;
       
 } 
+.players:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 #tacohealth {
-    margin-left: 750px;
+    /* margin-left: 750px; */
     margin-bottom: 0px;
     color: white;
     background-color: darkgreen;
     border: solid black;
-    max-width: 300px;
+    max-width: 350px;
 }
 #burritohealth {
     margin-left: 50px;
@@ -59,23 +64,40 @@ body {
     align-self: flex-start;
     width: 400px;
 }
+
+
 #originaltaco {
     width: 400px;
     height: 325px;
     margin-top: 180px;
-    margin-left: 700px;
-  
-    align-content: flex-end;
-    
+    /* margin-left: 700px;   */
 }
+
+.burrito {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.taco {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .burritobuttons {
     max-width: 400px;
     margin-bottom: 0px;
 
 }
 .tacobuttons {
+    display: flex;
     max-width: 400px;
-    margin-left: 700px; 
+    /* margin-left: 700px;  */
     margin-bottom: 0px; 
     
 } 
