@@ -95,35 +95,54 @@ const game = () => {
           player2.taco.health -= 10
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
           document.querySelector("#tacohealth").innerHTML = "Taco Health: " + `${player2.taco.health}`
+          
           const attackAnimation = () => {
-          document.querySelector("#originalburrito").style.marginLeft = "70%"
-          document.querySelector("#originaltaco").style.marginRight = "70%"
+          document.querySelector("#originalburrito").style.marginLeft = "50%"
+          document.querySelector("#originaltaco").style.marginRight = "50%"
+          console.log("attack")
           }
-          const runAttack = setInterval(attackAnimation, 500)
-          const stopAttack = clearInterval(attackAnimation)
+            // attackAnimation()
+        const runAttack = setInterval(attackAnimation(), 500)
+        
+        
+        const stopAttack = () => { 
+            clearInterval(runAttack)
+        }
+        // stopAttack()
+        const timeOut = setTimeout(stopAttack,500)
+       
+          
+          
           const returnAnimation = () => {
             document.querySelector("#originalburrito").style.marginLeft = "0%"
             document.querySelector("#originaltaco").style.marginRight = "0%"
+            console.log("return")
           }
-          const runReturn = setInterval (returnAnimation,500)
-          const stopReturn = clearInterval(returnAnimation)
-    
+        //   returnAnimation()
+          const runReturn =  setTimeout(returnAnimation,1000)
+          
+          const stopReturn = ()=> {clearInterval(runReturn)}
+        //   stopReturn()
         }
+
+
+
+
         else if (player2.taco.currentChoice === "defend") {
           result.innerHTML = "Taco is defending. Burrito bounces off of Taco's force field. Make your next move."
           player1.burrito.health -= 5
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
-          const attackBurrito = () => {
-            document.querySelector("#originalburrito").style.marginLeft = "125%"
-            }
-            const runAttackBurrito = setInterval(attackBurrito, 500)
-            const stopAttackBurrito = clearInterval(attackBurrito)
-            const returnBurrito = () => {
-              document.querySelector("#originalburrito").style.marginLeft = "0%"
+        //   const attackBurrito = () => {
+        //     document.querySelector("#originalburrito").style.marginLeft = "125%"
+        //     }
+        //     const runAttackBurrito = setInterval(attackBurrito, 500)
+        //     const stopAttackBurrito = clearInterval(attackBurrito)
+        //     const returnBurrito = () => {
+        //       document.querySelector("#originalburrito").style.marginLeft = "0%"
               
-            }
-            const runReturnBurrtio = setInterval (returnBurrito,500)
-            const stopReturnBurrito = clearInterval(returnBurrito)
+        //     }
+        //     const runReturnBurrtio = setInterval (returnBurrito,500)
+        //     const stopReturnBurrito = clearInterval(returnBurrito)
         
         }
         else  if (player2.taco.currentChoice === "heal") {
@@ -215,7 +234,6 @@ const start = () => {
 }
 start ()
 const battle = () => {
-    document.getElementById("battle").disabled = false
     const battleButton = document.querySelector("#battle")
     battleButton.addEventListener("click", (event) => {
         game ()
