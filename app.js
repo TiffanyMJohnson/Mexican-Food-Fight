@@ -89,25 +89,30 @@ const game = () => {
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
           document.querySelector("#tacohealth").innerHTML = "Taco Health: " + `${player2.taco.health}`
           console.log(player2.taco.health)
+
           const attackAnimation = () => {
-          document.querySelector("#originalburrito").style.marginLeft = "50%"
-          document.querySelector("#originaltaco").style.marginRight = "50%"
+          document.querySelector("#originalburrito").style.marginLeft = "70%"
+          document.querySelector("#originaltaco").style.marginRight = "70%"
           
           }
-          const runAttack = setInterval(attackAnimation(), 500)
+          const runAttack = setInterval(attackAnimation(), 250)
           const stopAttack = () => { 
             clearInterval(runAttack)
          }
           const timeOut = setTimeout(stopAttack,500)
-          console.log(player2.taco.health)
+
+          const playSound = document.querySelector("#sword")
+
+          const playAudio = () => {
+              playSound.play()
+          }
+          playAudio()
+         
           const returnAnimation = () => {
             document.querySelector("#originalburrito").style.marginLeft = "0%"
-            console.log(player2.taco.health)
             document.querySelector("#originaltaco").style.marginRight = "0%"
-            console.log(player2.taco.health)
-          
           }
-          const runReturn =  setTimeout(returnAnimation,1000)
+          const runReturn =  setTimeout(returnAnimation,700)
         }
     
         else if (player2.taco.currentChoice === "defend") {
@@ -124,6 +129,14 @@ const game = () => {
               clearInterval(runAttack)
            }
             const timeOut = setTimeout(stopAttack,500)
+
+            const playSound = document.querySelector("#bounce")
+
+            const playAudio = () => {
+                playSound.play()
+            }
+            playAudio()
+           
            
             const returnAnimation = () => {
                 
