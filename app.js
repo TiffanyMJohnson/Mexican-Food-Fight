@@ -231,7 +231,7 @@ const game = () => {
             }
         }
         endGame = () => {
-            if (player1.burrito.health === 0) {
+            if (player1.burrito.health <= 0) {
                 const defeatedBurrito = document.getElementById("originalburrito")
                 defeatedBurrito.src = "https://i.imgur.com/FcRALwE.png"
                 const victoryTaco = document.getElementById ("originaltaco")
@@ -255,7 +255,7 @@ const game = () => {
                  }
                  playAudio()
             }
-            else if (player2.taco.health === 0) {
+            else if (player2.taco.health <= 0) {
                 const defeatedTaco = document.getElementById("originaltaco")
                 defeatedTaco.src = "https://i.imgur.com/Yvlphzo.png"
                 const victoryBurrito = document.getElementById("originalburrito")
