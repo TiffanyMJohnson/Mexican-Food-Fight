@@ -295,7 +295,7 @@ const game = () => {
         endGame = () => {
             if (player1.burrito.health === 0) {
                 const defeatedBurrito = document.getElementById("originalburrito")
-                defeatedBurrito.src = ""
+                defeatedBurrito.src = "https://i.imgur.com/FcRALwE.png"
                 const victoryTaco = document.getElementById ("originaltaco")
                 victoryTaco.src = "https://i.imgur.com/6VuLdv9.png"
                 result.innerHTML = "Taco has defeated Burrito to become the Supreme Mexican Food"
@@ -319,7 +319,7 @@ const game = () => {
             }
             else if (player2.taco.health === 0) {
                 const defeatedTaco = document.getElementById("originaltaco")
-                defeatedTaco.src = ""
+                defeatedTaco.src = "https://i.imgur.com/Yvlphzo.png"
                 const victoryBurrito = document.getElementById("originalburrito")
                 victoryBurrito.src = "https://i.imgur.com/ROYglNr.png"
                 result.innerHTML = "Burrito has defeated Taco to become the Supreme Mexican Food"
