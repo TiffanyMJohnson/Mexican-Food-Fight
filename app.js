@@ -160,6 +160,15 @@ const game = () => {
               clearInterval(runAttack)
            }
             const timeOut = setTimeout(stopAttack,500)
+
+            const playSound = document.querySelector("#sword")
+
+            const playAudio = () => {
+                playSound.play()
+            }
+            playAudio()
+            
+           
             const returnAnimation = () => {
               document.querySelector("#originalburrito").style.marginLeft = "0%"
             }
@@ -181,6 +190,14 @@ const game = () => {
               clearInterval(runAttack)
            }
             const timeOut = setTimeout(stopAttack,500)
+
+            const playSound = document.querySelector("#bounce")
+
+            const playAudio = () => {
+                playSound.play()
+            }
+            playAudio()
+            
   
             const returnAnimation = () => {
               document.querySelector("#originaltaco").style.marginRight = "0%"
@@ -192,12 +209,27 @@ const game = () => {
          else if (player2.taco.currentChoice === "defend") {
           result.innerHTML = "Burrito and Taco have raised thier force fields. Make your next move."
           console.log(player1.burrito.currentChoice)
+
+          const playSound = document.querySelector("#double")
+
+          const playAudio = () => {
+              playSound.play()
+          }
+          playAudio()
+          
           
         } 
          else if (player2.taco.currentChoice === "heal") {
           result.innerHTML = " Burrito has chosen to defend and Taco has chosen to heal. Make your next move."
           player2.taco.health += 5
           document.querySelector("#tacohealth").innerHTML = "Taco Health: " + `${player2.taco.health}`
+
+          const playSound = document.querySelector("#heal")
+
+          const playAudio = () => {
+              playSound.play()
+          }
+          playAudio()
          }
 }
        
@@ -216,6 +248,14 @@ const game = () => {
               clearInterval(runAttack)
            }
             const timeOut = setTimeout(stopAttack,500)
+
+            const playSound = document.querySelector("#sword")
+
+            const playAudio = () => {
+                playSound.play()
+            }
+            playAudio()
+            
   
             const returnAnimation = () => {
               document.querySelector("#originaltaco").style.marginRight = "0%"
@@ -227,6 +267,13 @@ const game = () => {
           result.innerHTML = "Burrito has chosen to heal and Taco has chosen to defend. Make your next move."
           player1.burrito.health += 5
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
+
+          const playSound = document.querySelector("#heal")
+
+          const playAudio = () => {
+              playSound.play()
+          }
+          playAudio()
    
         } else if (player2.taco.currentChoice === "heal") {
           result.innerHTML = "Burrito and Taco take a break to heal. Make your next move."
@@ -234,6 +281,14 @@ const game = () => {
           player2.taco.health += 5
           document.querySelector("#burritohealth").innerHTML = "Burrito Health: " + `${player1.burrito.health}`
           document.querySelector("#tacohealth").innerHTML = "Taco Health: " + `${player2.taco.health}`
+
+          const playSound = document.querySelector("#heal")
+
+          const playAudio = () => {
+              playSound.play()
+          }
+          playAudio()
+          
             }
         }
 
@@ -255,6 +310,12 @@ const game = () => {
                 refresh.addEventListener("click", (event)=> {
                      location.reload()
                  })
+                 const playSound = document.querySelector("#victory")
+
+                 const playAudio = () => {
+                     playSound.play()
+                 }
+                 playAudio()
             }
             else if (player2.taco.health === 0) {
                 const defeatedTaco = document.getElementById("originaltaco")
@@ -273,6 +334,12 @@ const game = () => {
                 refresh.addEventListener("click", (event)=> {
                     location.reload()
                 })
+                const playSound = document.querySelector("#victory")
+
+                const playAudio = () => {
+                    playSound.play()
+                }
+                playAudio()
             }
             
         }
