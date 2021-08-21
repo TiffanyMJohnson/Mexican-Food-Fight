@@ -239,6 +239,14 @@ const game = () => {
                 result.innerHTML = "Taco has defeated Burrito to become the Supreme Mexican Food"
                 document.getElementById("battle").disabled = true
                 document.getElementById("start").disabled = true
+                //trying to get action buttons to disable//
+                document.querySelector("#attackburrito").disabled = true
+                document.getElementById("defendburrito").disabled = true
+                document.getElementById("healburrito").disabled = true
+                document.getElementById("attacktaco").disabled = true
+                document.getElementById("defendtaco").disabled = true
+                document.getElementById("healtaco").disabled = true
+                //
                 const refresh = document.createElement ("button")
                 refresh.innerText = "Refresh Game"
                 const appendToTop = document.querySelector(".gameplay")
@@ -254,7 +262,7 @@ const game = () => {
                      playSound.play()
                  }
                  playAudio()
-            }
+                }
             else if (player2.taco.health <= 0) {
                 const defeatedTaco = document.getElementById("originaltaco")
                 defeatedTaco.src = "https://i.imgur.com/Yvlphzo.png"
@@ -269,6 +277,14 @@ const game = () => {
                 refresh.style.marginBottom = "0px"
                 document.getElementById("battle").disabled = true
                 document.getElementById("start").disabled = true
+                //trying to get action buttons to disable//
+                document.getElementById("attackburrito").disabled = true
+                document.getElementById("defendburrito").disabled = true
+                document.getElementById("healburrito").disabled = true
+                document.getElementById("attacktaco").disabled = true
+                document.getElementById("defendtaco").disabled = true
+                document.getElementById("healtaco").disabled = true
+                //
                 refresh.addEventListener("click", (event)=> {
                     location.reload()
                 })
